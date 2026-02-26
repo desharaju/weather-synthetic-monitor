@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Real-time synthetic monitoring dashboard for weather APIs">
+  <title>Weather API Monitor — Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-left">
+      <div class="logo">
+        <span class="logo-icon">🌦️</span>
+        <h1>Weather Monitor</h1>
+      </div>
+      <span class="badge badge-live" id="live-badge">
+        <span class="pulse-dot"></span> LIVE
+      </span>
+    </div>
+    <div class="header-right">
+      <div class="last-updated" id="last-updated">Connecting...</div>
+    </div>
+  </header>
+
+  <!-- Global Stats Bar -->
+  <section class="global-stats" id="global-stats">
+    <div class="stat-pill">
+      <span class="stat-label">Overall Uptime</span>
+      <span class="stat-value" id="overall-uptime">—</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-label">Avg Response</span>
+      <span class="stat-value" id="avg-response">—</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-label">Total Checks</span>
+      <span class="stat-value" id="total-checks">—</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-label">Open Incidents</span>
+      <span class="stat-value" id="open-incidents">—</span>
+    </div>
+  </section>
+
+  <!-- Monitor Cards -->
+  <section class="monitors-grid" id="monitors-grid">
+    <!-- Cards are rendered dynamically -->
+  </section>
+
+  <!-- Charts Section -->
+  <section class="charts-section">
+    <div class="chart-card">
+      <div class="chart-header">
+        <h2>Response Time</h2>
+        <div class="chart-legend" id="chart-legend"></div>
+      </div>
+      <div class="chart-container">
+        <canvas id="response-chart"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Incidents Timeline -->
+  <section class="incidents-section">
+    <h2 class="section-title">Incident Timeline</h2>
+    <div class="incidents-list" id="incidents-list">
+      <div class="empty-state">No incidents recorded yet</div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Synthetic Monitoring Agent &middot; Auto-refreshes every 10s</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
